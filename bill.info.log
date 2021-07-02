@@ -68,3 +68,15 @@ git remote rm <name>命令。使用前，建议先用git remote -v查看远程�
 关联一个远程库时必须给远程库指定一个名字，origin是默认习惯命名；
 关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+
+我们创建dev分支，然后切换到dev分支：
+git checkout -b dev
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+git branch dev
+git checkout dev
+
+git branch: 查看当前分支，会列出所有分支，当前分支前面会标一个*号。
+
+
+12235
