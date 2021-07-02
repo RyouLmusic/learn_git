@@ -3,3 +3,32 @@
 2020-11-28 16:13:06 [main:0] - [ERROR] Facade
 2020-11-28 16:13:06 [main:0] - [ERROR] Tomcat
 2020-11-28 16:13:06 [main:0] - [WARN] the change
+
+git log:查看操作仓库提交变换的记录
+git reset --hard 版本号 :[其中 HEAD~num :  表示前几个版本号，现在版本的前几个版本，也可以通过 git reflog : 进行查询版本号]
+git reflog:记录版本的移动
+
+版本控制图：
+┌────┐
+│HEAD│
+└────┘
+   │
+   └──> ○ append GPL
+        │
+        ○ add distributed
+        │
+        ○ wrote a readme file
+
+改为指向add distributed：
+┌────┐
+│HEAD│
+└────┘
+   │
+   │    ○ append GPL
+   │    │
+   └──> ○ add distributed
+        │
+		○ wrote a readme file
+
+git diff: 查看修改的内容
+git status: 查看状态（是否修改、是否未提交的内容）
