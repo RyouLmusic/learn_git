@@ -44,3 +44,27 @@ git status: 查看状态（是否修改、是否未提交的内容）
 
 git restore file ：指令使得在工作空间但是不在暂存区的文件撤销更改(内容恢复到没修改之前的状态)
 git restore --staged file:的作用是将暂存区的文件从暂存区撤出，但不会更改文件的内容。
+
+一个文件在工作区被删除之后可以使用以下两种方式进处理：
+(use "git add/rm <file>..." to update what will be committed) ：直接使用git rm <file> 将版本库中的文件也同步删除
+(use "git restore <file>..." to discard changes in working directory)：删错了，进行恢复
+
+
+### 远程仓库
+
+// 连接上远程仓库
+git remote add origin https://github.com/xxx/xxx.git
+
+// 推送到远程仓库
+git push -u origin main
+
+删除远程库
+如果添加的时候地址写错了，或者就是想删除远程库，可以用
+git remote rm <name>命令。使用前，建议先用git remote -v查看远程库信息：
+然后，根据名字删除，比如删除origin：
+
+总结
+要关联一个远程库，使用命令git remote add origin https://github.com/xxx/xxx.git
+关联一个远程库时必须给远程库指定一个名字，origin是默认习惯命名；
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
